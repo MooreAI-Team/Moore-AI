@@ -1,0 +1,20 @@
+name: Ping endpoint on update
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call endpoint
+        run: |
+          curl -X POST "https://n8n.judahsbase.com/webhook/130ec7b9-2ff7-4ab7-988e-65f1ac1fb825" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "repository": "${{ github.repository }}",
+              "ref": "${{ github.ref }}",
+              "sha": "${{ github.sha }}"
+            }'
