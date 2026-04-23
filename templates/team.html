@@ -7,29 +7,62 @@
 <section class="py-20 bg-primary-gradient text-center">
   <div class="max-w-6xl mx-auto px-4">
     <h2 class="text-4xl font-bold text-brand-light mb-6">Meet the Team</h2>
-    <p class="text-brand-cream mb-12">We're a crew of engineers, researchers, and consultants passionate about making AI work for real people.</p>
-    <div class="grid md:grid-cols-3 gap-8">
-      {% for person in [
-        {"img": "Zach.jpg", "name": "Zachary Moore", "title": "CEO & Founder", "desc": "Enterprise AI expert and visionary leader.", "class": "zach", "github": "Zach-A-Moore"},
-        {"img": "Laween.png", "name": "Laween Al-Sulaivany", "title": "Head of Product Development", "desc": "Leads our tech roadmap and research.", "class": "", "github": "laween-alsulaivany"},
-        {"img": "Judah.jpeg", "name": "Juda Nava", "title": "Head of Systems Design", "desc": "Experience in project management", "class": "judah", "github": "judahn02"}
-      ] %}
+    <p class="text-brand-cream mb-12">We each bring something different to a project, but every client gets the full team.</p>
 
-    <div class="service-card p-8 rounded-xl card-hover">
-      <a href="https://github.com/{{ person.github }}" target="_blank" rel="noopener noreferrer" class="github-link">
-        <img src="{{ url_for('static', filename='img/' ~ person.img) }}"
-            alt="{{ person.name }}"
-            class="team-photo mx-auto mb-6 rounded-full object-cover {{ person.class }}">
-      </a>
-      <h3 class="text-2xl font-semibold text-brand-light">
-        <a href="https://github.com/{{ person.github }}" target="_blank" rel="noopener noreferrer" class="github-link">
-          {{ person.name }}
+    <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+
+      <!-- Zachary Moore -->
+      <div class="service-card p-8 rounded-xl card-hover">
+        <a href="https://github.com/Zach-A-Moore" target="_blank" rel="noopener noreferrer" class="github-link">
+          <img src="{{ url_for('static', filename='img/Zach.jpg') }}"
+              alt="Zachary Moore"
+              class="team-photo mx-auto mb-6 rounded-full object-cover zach">
         </a>
-      </h3>
-      <p class="text-brand-red mb-3 font-semibold">{{ person.title }}</p>
-      <p class="text-brand-cream">{{ person.desc }}</p>
-    </div>
-    {% endfor %}
+        <h3 class="text-2xl font-semibold text-brand-light">
+          <a href="https://github.com/Zach-A-Moore" target="_blank" rel="noopener noreferrer" class="github-link">
+            Zachary Moore
+          </a>
+        </h3>
+        <p class="text-brand-red mb-3 font-semibold">CEO & Founder</p>
+        <p class="text-brand-cream">Zach leads client relationships and keeps the focus on outcomes, not deliverables. He is the first person on every call and the one making sure what we build actually solves the problem.</p>
+        <div class="mt-4">
+          <a href="/team/zach" class="text-brand-red hover:text-brand-burgundy text-sm font-semibold transition-colors">Read Bio &rarr;</a>
+        </div>
+      </div>
+
+      <!--
+      <div class="service-card p-8 rounded-xl card-hover">
+        <a href="https://github.com/laween-alsulaivany" target="_blank" rel="noopener noreferrer" class="github-link">
+          <img src="{{ url_for('static', filename='img/Laween.png') }}"
+              alt="Laween Al-Sulaivany"
+              class="team-photo mx-auto mb-6 rounded-full object-cover">
+        </a>
+        <h3 class="text-2xl font-semibold text-brand-light">
+          <a href="https://github.com/laween-alsulaivany" target="_blank" rel="noopener noreferrer" class="github-link">
+            Laween Al-Sulaivany
+          </a>
+        </h3>
+        <p class="text-brand-red mb-3 font-semibold">Head of Product Development</p>
+        <p class="text-brand-cream">Laween drives what we build and how we build it. He stays current on the tools and platforms that matter and makes sure every product we ship is clean, maintainable, and built to last.</p>
+      </div>
+      -->
+
+      <!-- Juda Nava -->
+      <div class="service-card p-8 rounded-xl card-hover">
+        <a href="https://github.com/judahn02" target="_blank" rel="noopener noreferrer" class="github-link">
+          <img src="{{ url_for('static', filename='img/Judah.jpeg') }}"
+              alt="Juda Nava"
+              class="team-photo mx-auto mb-6 rounded-full object-cover judah">
+        </a>
+        <h3 class="text-2xl font-semibold text-brand-light">
+          <a href="https://github.com/judahn02" target="_blank" rel="noopener noreferrer" class="github-link">
+            Juda Nava
+          </a>
+        </h3>
+        <p class="text-brand-red mb-3 font-semibold">Head of Systems Design</p>
+        <p class="text-brand-cream">Judah handles the architecture side: how data flows, how systems connect, and how platforms are structured for the long term. He makes sure nothing falls apart when things get complex.</p>
+      </div>
+
     </div>
   </div>
 </section>

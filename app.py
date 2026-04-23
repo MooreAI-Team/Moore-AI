@@ -34,6 +34,10 @@ def services():
 def team():
     return render_template('team.html')
 
+@app.route('/team/zach')
+def zach_bio():
+    return render_template('zach.html')
+
 @app.route('/testimonials')
 def testimonials():
     return render_template('testimonials.html')

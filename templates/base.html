@@ -9,15 +9,15 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   
   <!-- SEO Meta Tags -->
-  <title>{% if title %}{{ title }} - Moore AI{% else %}Moore AI - AI Consulting & Solutions{% endif %}</title>
-  <meta name="description" content="Moore AI delivers cutting-edge artificial intelligence consulting services. Transform your business with custom AI solutions, machine learning, and strategic AI implementation." />
-  <meta name="keywords" content="AI consulting, artificial intelligence, machine learning, AI solutions, business automation, AI strategy" />
+  <title>{% if title %}{{ title }} - Moore AI{% else %}Moore AI - Software Development & Systems Modernization{% endif %}</title>
+  <meta name="description" content="Moore AI builds custom software, modernizes legacy systems, and automates workflows. Three people who pay close attention to your problem and build the right solution." />
+  <meta name="keywords" content="custom software development, systems modernization, workflow automation, data integration, platform architecture, software consulting" />
   <meta name="author" content="Moore AI" />
   
   <!-- Open Graph / Social Media -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Moore AI - AI Consulting & Solutions" />
-  <meta property="og:description" content="Transform your business with cutting-edge artificial intelligence consulting services." />
+  <meta property="og:title" content="Moore AI - Software Development & Systems Modernization" />
+  <meta property="og:description" content="Moore AI builds custom software, modernizes legacy systems, and automates workflows. Three people who pay close attention to your problem and build the right solution." />
   <meta property="og:url" content="https://mooreai.net" />
   
   <!-- Stylesheets -->
@@ -54,7 +54,7 @@
 </head>
 
 
-<body class="min-h-screen bg-brand-night text-brand-light">
+<body class="min-h-screen bg-brand-night text-brand-light flex flex-col">
 
   <header class="bg-brand-night shadow-lg border-b border-brand-burgundy">
     <div class="max-w-7xl mx-auto px-4 py-6 flex justify-between items-center">
@@ -84,7 +84,7 @@
     </div>
   </header>
 
-  <main class="animate-fade-in-up page-transition">
+  <main class="animate-fade-in-up page-transition flex-1">
     {% with messages = get_flashed_messages(with_categories=true) %}
       {% if messages %}
         <div class="fixed top-6 right-6 space-y-4 z-50">
