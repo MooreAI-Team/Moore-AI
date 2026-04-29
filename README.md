@@ -20,6 +20,26 @@ We believe AI should feel less like hype and more like help. Our team of enginee
 
 **Website:** [mooreai.net](https://mooreai.net)
 
+## Docker Compose
+
+Create a `.env` file from `.env.example`, then start the site:
+
+```bash
+cp .env.example .env
+docker compose up -d --build
+```
+
+The app is intended to sit behind Traefik. It does not publish a host port;
+Traefik routes HTTP traffic for `mooreai.net` and `www.mooreai.net` to the
+container's internal port `8000`.
+
+Runtime contact-form files are stored in the `app-data` Docker volume.
+Stop the site with:
+
+```bash
+docker compose down
+```
+
 **Professional Links:**
 
 - [LinkedIn](https://www.linkedin.com/in/zach-moore-aa0535332/)

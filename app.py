@@ -18,6 +18,8 @@ load_dotenv()
 app.config['SECRET_KEY'] = os.getenv(
     'SECRET_KEY', 'fallback-secret-key-change-in-production')
 
+DATA_DIR = os.getenv("DATA_DIR", ".")
+
 
 @app.route('/')
 def index():
@@ -174,11 +176,13 @@ This email was sent automatically from the Moore AI contact form.
         return False
 
 
-def save_to_csv(name, email, message, filepath="data.csv"):
+def save_to_csv(name, email, message, filepath=None):
     """Save contact form submission to CSV file."""
+    filepath = filepath or os.path.join(DATA_DIR, "data.csv")
     file_exists = os.path.isfile(filepath)
 
     try:
+        os.makedirs(os.path.dirname(filepath) or ".", exist_ok=True)
         with open(filepath, mode='a', newline='', encoding='utf-8') as csvfile:
             fieldnames = ['timestamp', 'name', 'email', 'message']
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
@@ -208,7 +212,8 @@ def log_spam_attempt(user_ip, name, email, verification):
     }
 
     try:
-        with open('spam.txt', 'a') as f:
+        os.makedirs(DATA_DIR, exist_ok=True)
+        with open(os.path.join(DATA_DIR, 'spam.txt'), 'a') as f:
             f.write(json.dumps(spam_data) + '\n')
     except Exception as e:
         print(f"Error logging spam attempt: {e}")

@@ -1,0 +1,38 @@
+services:
+  web:
+    build: .
+    image: moore-ai:latest
+    container_name: moore-ai
+    restart: unless-stopped
+    networks:
+      - proxy
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      FLASK_ENV: production
+      DATA_DIR: /app/data
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.moore-ai.rule=Host(`mooreai.net`) || Host(`www.mooreai.net`)
+      - traefik.http.routers.moore-ai.entrypoints=web
+      - traefik.http.services.moore-ai.loadbalancer.server.port=8000
+    volumes:
+      - app-data:/app/data
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "python -c \"import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/', timeout=5)\"",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  app-data:
+
+networks:
+  proxy:
+    external: true
