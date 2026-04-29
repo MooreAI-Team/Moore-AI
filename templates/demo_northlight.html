@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Northlight Candles — Fargo, ND</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/demo_northlight.css') }}">
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nl-nav">
+    <a href="#home" class="nl-logo">Northlight</a>
+    <ul class="nl-nav-links">
+      <li><a href="#shop">Shop</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="nl-hero" id="home">
+    <p class="nl-hero-eyebrow">Hand-poured in Fargo, North Dakota</p>
+    <h1>Candles that smell like somewhere real.</h1>
+    <div class="nl-hero-rule"></div>
+    <p class="nl-hero-sub">Soy wax, cotton wicks, and scents worth having. Made in small batches and shipped anywhere in the US.</p>
+    <a href="#shop" class="nl-btn">Shop the collection</a>
+  </section>
+
+  <!-- Products -->
+  <section class="nl-products" id="shop">
+    <div class="nl-products-inner">
+      <span class="nl-section-eyebrow">The Collection</span>
+      <h2 class="nl-section-heading">Six scents, all in stock.</h2>
+
+      <div class="nl-product-grid">
+
+        <div class="nl-product-card">
+          <div class="nl-product-img" style="background: linear-gradient(135deg, #8a7058 0%, #c0a878 45%, #a8c098 100%);"></div>
+          <div class="nl-product-info">
+            <p class="nl-product-name">Cedar + Rain</p>
+            <p class="nl-product-desc">Dry wood and cool air. Clean without being sharp. Works year-round.</p>
+            <p class="nl-product-price">$18</p>
+          </div>
+        </div>
+
+        <div class="nl-product-card">
+          <div class="nl-product-img" style="background: linear-gradient(135deg, #2a3828 0%, #4a6040 55%, #7a7060 100%);"></div>
+          <div class="nl-product-info">
+            <p class="nl-product-name">Pine + Smoke</p>
+            <p class="nl-product-desc">Somewhere between a campfire and a forest floor. Burns slow.</p>
+            <p class="nl-product-price">$18</p>
+          </div>
+        </div>
+
+        <div class="nl-product-card">
+          <div class="nl-product-img" style="background: linear-gradient(135deg, #c8907a 0%, #e0b8a0 55%, #a87858 100%);"></div>
+          <div class="nl-product-info">
+            <p class="nl-product-name">Rose + Oak</p>
+            <p class="nl-product-desc">Not sweet. More like a pressed flower in an old book.</p>
+            <p class="nl-product-price">$22</p>
+          </div>
+        </div>
+
+        <div class="nl-product-card">
+          <div class="nl-product-img" style="background: linear-gradient(135deg, #f0e8d0 0%, #e0d0a8 50%, #c8b888 100%);"></div>
+          <div class="nl-product-info">
+            <p class="nl-product-name">Vanilla Birch</p>
+            <p class="nl-product-desc">Warm without being heavy. Good for smaller rooms.</p>
+            <p class="nl-product-price">$20</p>
+          </div>
+        </div>
+
+        <div class="nl-product-card">
+          <div class="nl-product-img" style="background: linear-gradient(135deg, #a8b890 0%, #c0c8a0 55%, #d8d8b8 100%);"></div>
+          <div class="nl-product-info">
+            <p class="nl-product-name">Saltgrass</p>
+            <p class="nl-product-desc">Light, dry, a little green. Prairie in a jar.</p>
+            <p class="nl-product-price">$16</p>
+          </div>
+        </div>
+
+        <div class="nl-product-card">
+          <div class="nl-product-img" style="background: linear-gradient(135deg, #1a2820 0%, #304038 55%, #486858 100%);"></div>
+          <div class="nl-product-info">
+            <p class="nl-product-name">Black Spruce</p>
+            <p class="nl-product-desc">Deep, resinous, a little cold. Our best seller.</p>
+            <p class="nl-product-price">$22</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="nl-about" id="about">
+    <div class="nl-about-inner">
+
+      <div class="nl-about-text">
+        <span class="nl-section-eyebrow">About</span>
+        <h2 class="nl-about-heading">Started in a kitchen in north Fargo.</h2>
+        <p>It started in 2019, pouring candles on the kitchen table to give away as gifts. One farmers market table led to two, then a website. It has stayed small on purpose.</p>
+        <p>Everything is made in batches of under 50. We use soy wax because it burns cleaner and longer than paraffin. Cotton wicks because they hold their shape and don't curl.</p>
+        <p>We sell at the Red River Market on Saturdays and ship anywhere in the US. Orders go out within three days. Free shipping on orders over $40.</p>
+      </div>
+
+      <div class="nl-about-visual" aria-hidden="true">
+        <div class="nl-swatch nl-swatch-tall" style="background: linear-gradient(160deg, #2a3828 0%, #4a6040 100%);"></div>
+        <div class="nl-swatch" style="background: linear-gradient(135deg, #e8d5b7, #d4b896);"></div>
+        <div class="nl-swatch" style="background: linear-gradient(135deg, #c8907a, #e0b8a0);"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer / Contact -->
+  <footer class="nl-footer" id="contact">
+    <span class="nl-footer-logo">Northlight</span>
+    <p>hello@northlightcandles.com</p>
+    <p>Fargo, North Dakota</p>
+    <div class="nl-footer-rule"></div>
+    <p>Saturdays at the Red River Market &nbsp;&middot;&nbsp; 9am to 1pm</p>
+    <p>Orders ship within 3 days &nbsp;&middot;&nbsp; Free shipping over $40</p>
+    <p class="nl-footer-copy">&copy; 2026 Northlight Candles</p>
+  </footer>
+
+  <div class="nl-demo-strip">
+    <p>This is a demo site &nbsp;&middot;&nbsp; Built by <a href="/web-design">Moore AI</a></p>
+  </div>
+
+</body>
+</html>

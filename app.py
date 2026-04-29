@@ -15,40 +15,63 @@ app = Flask(__name__)
 load_dotenv()
 
 # Use environment variable for secret key (security best practice)
-app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'fallback-secret-key-change-in-production')
+app.config['SECRET_KEY'] = os.getenv(
+    'SECRET_KEY', 'fallback-secret-key-change-in-production')
 
 
 @app.route('/')
 def index():
     return render_template('index.html')
 
+
 @app.route('/about')
 def about():
     return render_template('about.html')
+
 
 @app.route('/services')
 def services():
     return render_template('services.html')
 
+
 @app.route('/team')
 def team():
     return render_template('team.html')
+
 
 @app.route('/team/zach')
 def zach_bio():
     return render_template('zach.html')
 
+
 @app.route('/testimonials')
 def testimonials():
     return render_template('testimonials.html')
+
 
 @app.route('/projects')
 def projects():
     return render_template('projects.html')
 
+
 @app.route('/faq')
 def faq():
     return render_template('faq.html')
+
+
+@app.route('/web-design')
+def web_design():
+    return render_template('web_design.html', title='Web Design')
+
+
+@app.route('/demo/northlight')
+def demo_northlight():
+    return render_template('demo_northlight.html')
+
+
+@app.route('/demo/summit')
+def demo_summit():
+    return render_template('demo_summit.html')
 
 
 @app.route('/contact', methods=['POST'])
@@ -73,7 +96,7 @@ def contact():
 
     # Verify reCAPTCHA
     verification = verify_recaptcha(g_recaptcha_response, user_ip)
-    
+
     if not verification or not verification.get('success'):
         # Log potential spam
         log_spam_attempt(user_ip, name, email, verification)
@@ -90,10 +113,10 @@ def contact():
     try:
         # Send email notification
         send_email_notification(name, email, message)
-        
+
         # Save to CSV for records
         save_to_csv(name, email, message)
-        
+
         flash('Your message has been sent successfully!', 'success')
     except Exception as e:
         print(f"Error processing contact form: {e}")
@@ -104,7 +127,7 @@ def contact():
 
 @app.route('/favicon.ico')
 def favicon():
-    return send_from_directory(os.path.join(app.root_path, 'static', 'img'), 
+    return send_from_directory(os.path.join(app.root_path, 'static', 'img'),
                                'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 
@@ -114,7 +137,7 @@ def send_email_notification(name, sender_email, message_body):
     smtp_port = 587
     username = "zacharyalexmoore1@gmail.com"
     app_password = os.getenv("EMAIL_APP_PASSWORD")
-    
+
     if not app_password:
         print("Warning: EMAIL_APP_PASSWORD not set in environment variables")
         return False
@@ -194,11 +217,11 @@ def log_spam_attempt(user_ip, name, email, verification):
 def verify_recaptcha(response_token, remote_ip=None):
     """
     Verify reCAPTCHA response with Google's API.
-    
+
     Args:
         response_token (str): The reCAPTCHA response token
         remote_ip (str, optional): User's IP address
-        
+
     Returns:
         dict: API response or None if failed
     """
@@ -212,7 +235,7 @@ def verify_recaptcha(response_token, remote_ip=None):
         'secret': secret_key,
         'response': response_token,
     }
-    
+
     if remote_ip:
         payload['remoteip'] = remote_ip
 
