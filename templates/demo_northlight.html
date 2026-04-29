@@ -20,11 +20,16 @@
 
   <!-- Hero -->
   <section class="nl-hero" id="home">
-    <p class="nl-hero-eyebrow">Hand-poured in Fargo, North Dakota</p>
-    <h1>Candles that smell like somewhere real.</h1>
-    <div class="nl-hero-rule"></div>
-    <p class="nl-hero-sub">Soy wax, cotton wicks, and scents worth having. Made in small batches and shipped anywhere in the US.</p>
-    <a href="#shop" class="nl-btn">Shop the collection</a>
+    <div class="nl-hero-img-side">
+      <img src="{{ url_for('static', filename='img/demo/Hero.png') }}" alt="Northlight candles" class="nl-hero-photo">
+    </div>
+    <div class="nl-hero-text-side">
+      <p class="nl-hero-eyebrow">Hand-poured in Fargo, North Dakota</p>
+      <h1>Candles that smell like somewhere real.</h1>
+      <div class="nl-hero-rule"></div>
+      <p class="nl-hero-sub">Soy wax, cotton wicks, and scents worth having. Made in small batches and shipped anywhere in the US.</p>
+      <a href="#shop" class="nl-btn">Shop the collection</a>
+    </div>
   </section>
 
   <!-- Products -->
@@ -36,7 +41,7 @@
       <div class="nl-product-grid">
 
         <div class="nl-product-card">
-          <div class="nl-product-img" style="background: linear-gradient(135deg, #8a7058 0%, #c0a878 45%, #a8c098 100%);"></div>
+          <img class="nl-product-img" src="{{ url_for('static', filename='img/demo/Cedar-Rain.png') }}" alt="Cedar + Rain candle">
           <div class="nl-product-info">
             <p class="nl-product-name">Cedar + Rain</p>
             <p class="nl-product-desc">Dry wood and cool air. Clean without being sharp. Works year-round.</p>
@@ -45,7 +50,7 @@
         </div>
 
         <div class="nl-product-card">
-          <div class="nl-product-img" style="background: linear-gradient(135deg, #2a3828 0%, #4a6040 55%, #7a7060 100%);"></div>
+          <img class="nl-product-img" src="{{ url_for('static', filename='img/demo/Pine-Smoke.png') }}" alt="Pine + Smoke candle">
           <div class="nl-product-info">
             <p class="nl-product-name">Pine + Smoke</p>
             <p class="nl-product-desc">Somewhere between a campfire and a forest floor. Burns slow.</p>
@@ -54,7 +59,7 @@
         </div>
 
         <div class="nl-product-card">
-          <div class="nl-product-img" style="background: linear-gradient(135deg, #c8907a 0%, #e0b8a0 55%, #a87858 100%);"></div>
+          <img class="nl-product-img" src="{{ url_for('static', filename='img/demo/Rose-Oak.png') }}" alt="Rose + Oak candle">
           <div class="nl-product-info">
             <p class="nl-product-name">Rose + Oak</p>
             <p class="nl-product-desc">Not sweet. More like a pressed flower in an old book.</p>
@@ -63,7 +68,7 @@
         </div>
 
         <div class="nl-product-card">
-          <div class="nl-product-img" style="background: linear-gradient(135deg, #f0e8d0 0%, #e0d0a8 50%, #c8b888 100%);"></div>
+          <img class="nl-product-img" src="{{ url_for('static', filename='img/demo/Vanilla-Birch.png') }}" alt="Vanilla Birch candle">
           <div class="nl-product-info">
             <p class="nl-product-name">Vanilla Birch</p>
             <p class="nl-product-desc">Warm without being heavy. Good for smaller rooms.</p>
@@ -72,7 +77,7 @@
         </div>
 
         <div class="nl-product-card">
-          <div class="nl-product-img" style="background: linear-gradient(135deg, #a8b890 0%, #c0c8a0 55%, #d8d8b8 100%);"></div>
+          <img class="nl-product-img" src="{{ url_for('static', filename='img/demo/Saltgrass.png') }}" alt="Saltgrass candle">
           <div class="nl-product-info">
             <p class="nl-product-name">Saltgrass</p>
             <p class="nl-product-desc">Light, dry, a little green. Prairie in a jar.</p>
@@ -81,7 +86,7 @@
         </div>
 
         <div class="nl-product-card">
-          <div class="nl-product-img" style="background: linear-gradient(135deg, #1a2820 0%, #304038 55%, #486858 100%);"></div>
+          <img class="nl-product-img" src="{{ url_for('static', filename='img/demo/Black-Spruce.png') }}" alt="Black Spruce candle">
           <div class="nl-product-info">
             <p class="nl-product-name">Black Spruce</p>
             <p class="nl-product-desc">Deep, resinous, a little cold. Our best seller.</p>
@@ -105,10 +110,10 @@
         <p>We sell at the Red River Market on Saturdays and ship anywhere in the US. Orders go out within three days. Free shipping on orders over $40.</p>
       </div>
 
-      <div class="nl-about-visual" aria-hidden="true">
-        <div class="nl-swatch nl-swatch-tall" style="background: linear-gradient(160deg, #2a3828 0%, #4a6040 100%);"></div>
-        <div class="nl-swatch" style="background: linear-gradient(135deg, #e8d5b7, #d4b896);"></div>
-        <div class="nl-swatch" style="background: linear-gradient(135deg, #c8907a, #e0b8a0);"></div>
+      <div class="nl-about-visual">
+        <img src="{{ url_for('static', filename='img/demo/About-1.png') }}" alt="Pouring candles in Fargo" class="nl-about-img-tall">
+        <img src="{{ url_for('static', filename='img/demo/About-2.png') }}" alt="Candle wicks and wax" class="nl-about-img">
+        <img src="{{ url_for('static', filename='img/demo/About-3.png') }}" alt="Finished Northlight candles" class="nl-about-img">
       </div>
 
     </div>

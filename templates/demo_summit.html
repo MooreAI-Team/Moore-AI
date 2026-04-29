@@ -28,33 +28,36 @@
     <ul class="sr-nav-links">
       <li><a href="#services">Services</a></li>
       <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#reviews">Reviews</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="#contact" class="sr-nav-cta">Free Quote</a></li>
     </ul>
   </nav>
 
-  <!-- Hero -->
+  <!-- Hero — real image + dark overlay -->
+  <!-- Image file: static/img/demo/summit-hero.png -->
+  <!-- Suggested: aerial or wide shot of a finished roof, or a crew on a job site -->
   <section class="sr-hero" id="home">
+    <img
+      src="{{ url_for('static', filename='img/demo/summit-hero.png') }}"
+      alt="Completed roof replacement, Minneapolis metro"
+      class="sr-hero-bg"
+    >
+    <div class="sr-hero-overlay"></div>
     <div class="sr-hero-inner">
-      <div>
-        <p class="sr-hero-eyebrow">Minneapolis &amp; St. Paul Metro &nbsp;&middot;&nbsp; Since 2009</p>
-        <h1>Roofs that hold up.<br><span>Crews that show up.</span></h1>
-        <p class="sr-hero-sub">Residential and commercial roofing done by our own crew. No subcontractors, no handoffs. We have been doing this for 15 years and we stand behind the work.</p>
-        <div class="sr-btn-group">
-          <a href="#contact" class="sr-btn sr-btn-primary">Get a Free Quote</a>
-          <a href="#gallery" class="sr-btn sr-btn-secondary">See Our Work</a>
-        </div>
-      </div>
-      <div class="sr-hero-images" aria-hidden="true">
-        <div class="sr-hero-img" style="background: linear-gradient(160deg, #1e2c1a 0%, #2a3c24 50%, #384830 100%);"></div>
-        <div class="sr-hero-img" style="background: linear-gradient(160deg, #1a2535 0%, #263548 100%);"></div>
-        <div class="sr-hero-img" style="background: linear-gradient(160deg, #303828 0%, #485040 100%);"></div>
+      <p class="sr-hero-eyebrow">Minneapolis &amp; St. Paul Metro &nbsp;&middot;&nbsp; Since 2009</p>
+      <h1>Roofs that hold up.<br><span>Crews that show up.</span></h1>
+      <p class="sr-hero-sub">Residential and commercial roofing done by our own crew. No subcontractors, no handoffs. We have been doing this for 15 years and we stand behind the work.</p>
+      <div class="sr-btn-group">
+        <a href="#contact" class="sr-btn sr-btn-primary">Get a Free Quote</a>
+        <a href="#gallery" class="sr-btn sr-btn-secondary">See Our Work</a>
       </div>
     </div>
   </section>
 
-  <!-- Stats -->
+  <!-- Stats + credentials bar -->
   <div class="sr-stats">
     <div class="sr-stats-inner">
       <div class="sr-stat">
@@ -67,56 +70,228 @@
       </div>
       <div class="sr-stat">
         <div class="sr-stat-number">4.9&#9733;</div>
-        <div class="sr-stat-label">Google Rating</div>
+        <div class="sr-stat-label">Google &middot; 127 reviews</div>
       </div>
       <div class="sr-stat">
         <div class="sr-stat-number">2yr</div>
         <div class="sr-stat-label">Labor Warranty</div>
       </div>
+      <div class="sr-stat">
+        <div class="sr-stat-number">A+</div>
+        <div class="sr-stat-label">BBB Accredited</div>
+      </div>
+      <div class="sr-stat">
+        <div class="sr-stat-number">$2M</div>
+        <div class="sr-stat-label">General Liability</div>
+      </div>
     </div>
   </div>
 
-  <!-- Services -->
-  <section class="sr-services" id="services">
-    <div class="sr-services-inner">
-      <span class="sr-section-eyebrow">What We Do</span>
-      <h2 class="sr-section-heading">Four types of work.<br>One crew that does all of it.</h2>
-      <p class="sr-section-sub">No subcontractors. Every job is run by a Summit employee from the estimate through cleanup.</p>
+  <!-- Welcome split section (inspired by ABC Seamless) -->
+  <section class="sr-welcome">
+    <div class="sr-welcome-photo-side">
+      <img src="{{ url_for('static', filename='img/demo/summit-welcome.png') }}" alt="Completed roof, Twin Cities metro" class="sr-welcome-photo">
+    </div>
+    <div class="sr-welcome-text-side">
+      <h2>Welcome to Summit Roofing Co.</h2>
+      <p>For more than 15 years, Summit Roofing has served homeowners and property managers across the Twin Cities metro. We replace roofs, handle storm damage claims, install gutters, and take on commercial jobs.</p>
+      <p>Minnesota winters are hard on roofs. Every product we use is chosen for this climate, and every install is backed by a 2-year labor warranty on top of the manufacturer coverage.</p>
+      <p><strong>Better work. Straight pricing. Real warranty.</strong><br>That is the Summit standard.</p>
+      <div class="sr-btn-group">
+        <a href="#contact" class="sr-btn sr-btn-primary">Contact Us</a>
+        <a href="#about" class="sr-btn sr-btn-dark">Learn About Us</a>
+      </div>
+    </div>
+  </section>
 
-      <div class="sr-service-grid">
-        <div class="sr-service-card">
-          <h3>Roof Replacement</h3>
-          <p>Full tear-off down to the deck, inspection, and install. We handle permits, dumpster, and cleanup. Most residential jobs finish in a single day.</p>
+  <!-- Tabbed services selector (inspired by ABC Seamless) -->
+  <section class="sr-services-selector" id="services">
+    <div class="sr-selector-head">
+      <span class="sr-section-eyebrow">What We Do</span>
+      <h2 class="sr-selector-title">Roofing Options</h2>
+      <p class="sr-selector-sub">Residential and commercial. No subcontractors on any job.</p>
+    </div>
+    <div class="sr-selector-body">
+
+      <div class="sr-selector-sidebar">
+        <button class="sr-tab-item active" data-tab="roof">
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 12L12 3l9 9M5 10v9a1 1 0 001 1h4v-5h4v5h4a1 1 0 001-1v-9"/></svg>
+          <span>Roof Replacement</span>
+        </button>
+        <button class="sr-tab-item" data-tab="storm">
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="23 7 13 17 8 12 1 19"/><polyline points="17 7 23 7 23 13"/></svg>
+          <span>Storm Damage &amp; Insurance</span>
+        </button>
+        <button class="sr-tab-item" data-tab="gutters">
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="7" width="20" height="4" rx="1"/><path d="M4 11v6a2 2 0 002 2h12a2 2 0 002-2v-6"/></svg>
+          <span>Gutters</span>
+        </button>
+        <button class="sr-tab-item" data-tab="commercial">
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="18" rx="1"/><path d="M8 3v18M16 3v18M2 9h20M2 15h20"/></svg>
+          <span>Commercial Roofing</span>
+        </button>
+      </div>
+
+      <div class="sr-selector-panels">
+
+        <div class="sr-tab-panel active" id="panel-roof" data-bg="{{ url_for('static', filename='img/demo/summit-project-1.png') }}">
+          <div class="sr-tab-overlay"></div>
+          <div class="sr-tab-content">
+            <h3>Roof <span>Replacement</span></h3>
+            <p class="sr-tab-tagline">The whole job, done by one crew, finished in a day.</p>
+            <p class="sr-tab-desc">Full tear-off down to the deck, inspection, and install. We handle permits, dumpster, and cleanup. Most residential jobs finish in a single day. Shingle, metal, and designer options available.</p>
+            <div class="sr-tab-btns">
+              <a href="#contact" class="sr-btn sr-btn-primary">Get a Quote</a>
+              <a href="#contact" class="sr-btn sr-btn-outline">Contact Us</a>
+            </div>
+          </div>
         </div>
-        <div class="sr-service-card">
-          <h3>Storm Damage &amp; Insurance</h3>
-          <p>Hail, wind, ice damage. We document what we find, walk you through the insurance process, and replace what needs replacing. We deal with adjusters regularly and know what to look for.</p>
+
+        <div class="sr-tab-panel" id="panel-storm" data-bg="{{ url_for('static', filename='img/demo/summit-project-2.png') }}">
+          <div class="sr-tab-overlay"></div>
+          <div class="sr-tab-content">
+            <h3>Storm Damage <span>&amp; Insurance</span></h3>
+            <p class="sr-tab-tagline">Hail, wind, ice. We document it and walk you through the claim.</p>
+            <p class="sr-tab-desc">We inspect for storm damage, write up what we find, and work with your insurance adjuster to get the claim right. We replace what needs replacing. If nothing needs replacing, we will tell you that too.</p>
+            <div class="sr-tab-btns">
+              <a href="#contact" class="sr-btn sr-btn-primary">Get a Quote</a>
+              <a href="#contact" class="sr-btn sr-btn-outline">Contact Us</a>
+            </div>
+          </div>
         </div>
-        <div class="sr-service-card">
-          <h3>Gutters</h3>
-          <p>Seamless aluminum gutters cut and installed on-site to match your roofline. Gutter guard available. We also repair and clean existing gutters.</p>
+
+        <div class="sr-tab-panel" id="panel-gutters" data-bg="{{ url_for('static', filename='img/demo/summit-project-4.png') }}">
+          <div class="sr-tab-overlay"></div>
+          <div class="sr-tab-content">
+            <h3>Seamless <span>Gutters</span></h3>
+            <p class="sr-tab-tagline">Cut on-site. Fitted to your roofline exactly.</p>
+            <p class="sr-tab-desc">Seamless aluminum gutters formed and installed on-site to fit your house exactly. K-style and half-round profiles. Gutter guard available. We also repair and clean existing gutters.</p>
+            <div class="sr-tab-btns">
+              <a href="#contact" class="sr-btn sr-btn-primary">Get a Quote</a>
+              <a href="#contact" class="sr-btn sr-btn-outline">Contact Us</a>
+            </div>
+          </div>
         </div>
-        <div class="sr-service-card">
-          <h3>Commercial Roofing</h3>
-          <p>Low-slope and flat roofing for commercial and multi-family properties. TPO, EPDM, and modified bitumen. We work around your schedule and timeline.</p>
+
+        <div class="sr-tab-panel" id="panel-commercial" data-bg="{{ url_for('static', filename='img/demo/summit-project-5.png') }}">
+          <div class="sr-tab-overlay"></div>
+          <div class="sr-tab-content">
+            <h3>Commercial <span>Roofing</span></h3>
+            <p class="sr-tab-tagline">Low-slope and flat roofing on your schedule.</p>
+            <p class="sr-tab-desc">TPO, EPDM, and modified bitumen for commercial and multi-family properties. We work around your operating hours. Most commercial jobs include a 10-year manufacturer warranty.</p>
+            <div class="sr-tab-btns">
+              <a href="#contact" class="sr-btn sr-btn-primary">Get a Quote</a>
+              <a href="#contact" class="sr-btn sr-btn-outline">Contact Us</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery — <img> placeholders, drop files into static/img/demo/ -->
+  <section class="sr-gallery" id="gallery">
+    <div class="sr-gallery-inner">
+      <span class="sr-section-eyebrow">Recent Work</span>
+      <h2 class="sr-section-heading" style="margin-bottom: 12px;">Completed jobs from the last two years.</h2>
+      <p class="sr-section-sub">Residential replacements, storm damage work, and commercial jobs across the Twin Cities metro.</p>
+
+      <div class="sr-gallery-grid">
+        <!-- summit-project-1.png: wide/landscape shot of a finished roof — spans 2 cols -->
+        <div class="sr-gallery-item">
+          <img
+            src="{{ url_for('static', filename='img/demo/summit-project-1.png') }}"
+            alt="Asphalt shingle roof replacement, Eagan MN"
+            class="sr-gallery-img"
+          >
+        </div>
+        <!-- summit-project-2.png: close-up of shingles, flashing, or ridge cap detail -->
+        <div class="sr-gallery-item">
+          <img
+            src="{{ url_for('static', filename='img/demo/summit-project-2.png') }}"
+            alt="Ridge cap and flashing detail, Woodbury MN"
+            class="sr-gallery-img"
+          >
+        </div>
+        <!-- summit-project-3.png: another completed house -->
+        <div class="sr-gallery-item">
+          <img
+            src="{{ url_for('static', filename='img/demo/summit-project-3.png') }}"
+            alt="Storm damage replacement, Lakeville MN"
+            class="sr-gallery-img"
+          >
+        </div>
+        <!-- summit-project-4.png: gutters or another angle -->
+        <div class="sr-gallery-item">
+          <img
+            src="{{ url_for('static', filename='img/demo/summit-project-4.png') }}"
+            alt="Seamless gutter installation, Eden Prairie MN"
+            class="sr-gallery-img"
+          >
+        </div>
+        <!-- summit-project-5.png: commercial flat roof or wider shot -->
+        <div class="sr-gallery-item">
+          <img
+            src="{{ url_for('static', filename='img/demo/summit-project-5.png') }}"
+            alt="Commercial flat roof installation, St. Paul MN"
+            class="sr-gallery-img"
+          >
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Gallery -->
-  <section class="sr-gallery" id="gallery">
-    <div class="sr-gallery-inner">
-      <span class="sr-section-eyebrow">Recent Work</span>
-      <h2 class="sr-section-heading" style="margin-bottom: 12px;">Completed jobs from the last two years.</h2>
-      <p class="sr-section-sub">Residential replacements, storm work, and commercial jobs across the metro.</p>
+  <!-- Why Choose Summit -->
+  <section class="sr-why" id="why">
+    <div class="sr-why-inner">
+      <div class="sr-why-header">
+        <span class="sr-section-eyebrow">Why Summit</span>
+        <h2 class="sr-section-heading">How we run every job.</h2>
+      </div>
+      <div class="sr-why-list">
+        <div class="sr-why-item">
+          <h3>No subcontractors</h3>
+          <p>Every person on your job is a Summit employee. The same person who gives you the estimate will be on-site when the work happens.</p>
+        </div>
+        <div class="sr-why-item">
+          <h3>2-year labor warranty</h3>
+          <p>We back every install with a 2-year labor warranty. Manufacturer material warranties stack on top of that, they don't replace it.</p>
+        </div>
+        <div class="sr-why-item">
+          <h3>Straight estimates</h3>
+          <p>We write down what needs doing and what it costs. No inflated scope, no pressure, no fees that appear after the job is done.</p>
+        </div>
+        <div class="sr-why-item">
+          <h3>Licensed and insured</h3>
+          <p>Licensed in Minnesota and Wisconsin. $2M general liability. Workers' comp on every employee, on every job, every time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <div class="sr-gallery-grid">
-        <div class="sr-gallery-item" style="background: linear-gradient(160deg, #2c3828 0%, #3a4832 40%, #6a7858 100%);"></div>
-        <div class="sr-gallery-item" style="background: linear-gradient(160deg, #303030 0%, #484848 50%, #606060 100%);"></div>
-        <div class="sr-gallery-item" style="background: linear-gradient(160deg, #283020 0%, #404830 60%, #586040 100%);"></div>
-        <div class="sr-gallery-item" style="background: linear-gradient(160deg, #383828 0%, #505040 55%, #686858 100%);"></div>
-        <div class="sr-gallery-item" style="background: linear-gradient(160deg, #282828 0%, #404040 50%, #585858 100%);"></div>
+  <!-- Reviews -->
+  <section class="sr-reviews" id="reviews">
+    <div class="sr-reviews-inner">
+      <span class="sr-section-eyebrow">Reviews</span>
+      <h2 class="sr-section-heading" style="color: var(--white);">What customers say.</h2>
+
+      <div class="sr-reviews-grid">
+        <div class="sr-review-card">
+          <div class="sr-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="sr-review-text">"Summit replaced our roof after a bad hail storm last summer. They handled the insurance paperwork, showed up on time, and had the whole thing done in a day. No surprises, no mess left behind."</p>
+          <div class="sr-review-author">Kevin M. &nbsp;&middot;&nbsp; Woodbury, MN</div>
+        </div>
+        <div class="sr-review-card">
+          <div class="sr-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="sr-review-text">"I got three quotes. Summit wasn't the cheapest, but they were the only crew with the same people from the estimate through cleanup. That matters. Roof looks great two years later."</p>
+          <div class="sr-review-author">Sandra T. &nbsp;&middot;&nbsp; Eagan, MN</div>
+        </div>
+        <div class="sr-review-card">
+          <div class="sr-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="sr-review-text">"The storm damage inspection was free and they were honest about what actually needed replacing versus what could wait. That kind of straight talk is hard to find. Recommend without hesitation."</p>
+          <div class="sr-review-author">Ryan H. &nbsp;&middot;&nbsp; Lakeville, MN</div>
+        </div>
       </div>
     </div>
   </section>
@@ -131,23 +306,14 @@
         <p>We don't subcontract. Every job is run by a Summit employee from the estimate through cleanup. That's the only way we can stand behind the work with a real warranty.</p>
         <p>Licensed in Minnesota and Wisconsin. $2 million general liability. We carry workers' comp on every employee on every job.</p>
       </div>
-      <div class="sr-creds">
-        <div class="sr-cred">
-          <div class="sr-cred-label">MN License</div>
-          <div class="sr-cred-value">BC123456</div>
-        </div>
-        <div class="sr-cred">
-          <div class="sr-cred-label">Liability</div>
-          <div class="sr-cred-value">$2M Coverage</div>
-        </div>
-        <div class="sr-cred">
-          <div class="sr-cred-label">Warranty</div>
-          <div class="sr-cred-value">2-yr Labor</div>
-        </div>
-        <div class="sr-cred">
-          <div class="sr-cred-label">Service Area</div>
-          <div class="sr-cred-value">MN + WI</div>
-        </div>
+      <div>
+        <!-- summit-team.png: crew photo, on a job site or in front of trucks -->
+        <img
+          src="{{ url_for('static', filename='img/demo/summit-team.png') }}"
+          alt="Summit Roofing crew on a completed job"
+          class="sr-about-img"
+        >
+        <p class="sr-about-credentials">MN License #BC123456 &nbsp;&middot;&nbsp; $2M General Liability &nbsp;&middot;&nbsp; 2-yr Labor Warranty &nbsp;&middot;&nbsp; Serving MN &amp; WI</p>
       </div>
     </div>
   </section>
@@ -229,6 +395,8 @@
       <div class="sr-footer-links">
         <a href="#services">Services</a>
         <a href="#gallery">Gallery</a>
+        <a href="#why">Why Us</a>
+        <a href="#reviews">Reviews</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </div>
@@ -238,6 +406,24 @@
   <div class="sr-demo-strip">
     <p>This is a demo site &nbsp;&middot;&nbsp; Built by <a href="/web-design">Moore AI</a></p>
   </div>
+  <script>
+    // Set background images from data-bg attributes (avoids Jinja/CSS quoting issues)
+    document.querySelectorAll('.sr-tab-panel').forEach(function(panel) {
+      var bg = panel.getAttribute('data-bg');
+      if (bg) panel.style.backgroundImage = 'url(' + bg + ')';
+    });
+
+    // Tab switching
+    document.querySelectorAll('.sr-tab-item').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var tab = btn.getAttribute('data-tab');
+        document.querySelectorAll('.sr-tab-item').forEach(function(b) { b.classList.remove('active'); });
+        document.querySelectorAll('.sr-tab-panel').forEach(function(p) { p.classList.remove('active'); });
+        btn.classList.add('active');
+        document.getElementById('panel-' + tab).classList.add('active');
+      });
+    });
+  </script>
 
 </body>
 </html>

@@ -75,9 +75,32 @@ body {
 /* ── Hero ──────────────────────────────── */
 
 .nl-hero {
-  background: linear-gradient(180deg, #faf6f0 0%, #f0e6d4 100%);
-  padding: 110px 48px 90px;
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 580px;
+  background: var(--cream);
+}
+
+.nl-hero-img-side {
+  position: relative;
+  overflow: hidden;
+  background: var(--dark-brown);
+}
+
+.nl-hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.nl-hero-text-side {
+  padding: 80px 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--cream);
 }
 
 .nl-hero-eyebrow {
@@ -90,21 +113,19 @@ body {
 }
 
 .nl-hero h1 {
-  font-size: clamp(36px, 5.5vw, 60px);
+  font-size: clamp(30px, 4.5vw, 52px);
   font-weight: 400;
   color: var(--dark-brown);
   line-height: 1.15;
   margin-bottom: 0;
-  max-width: 580px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 480px;
 }
 
 .nl-hero-rule {
   width: 36px;
   height: 1px;
   background: var(--tan);
-  margin: 28px auto;
+  margin: 28px 0;
 }
 
 .nl-hero-sub {
@@ -112,7 +133,7 @@ body {
   font-family: system-ui, sans-serif;
   color: var(--mid-brown);
   max-width: 380px;
-  margin: 0 auto 40px;
+  margin: 0 0 40px;
   line-height: 1.75;
 }
 
@@ -188,6 +209,10 @@ body {
   width: 100%;
   aspect-ratio: 1 / 1;
   display: block;
+  object-fit: cover;
+  object-position: center;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .nl-product-info {
@@ -255,16 +280,26 @@ body {
 .nl-about-visual {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 180px 180px;
   gap: 10px;
+  align-items: start;
 }
 
-.nl-swatch {
-  border-radius: 3px;
-}
-
-.nl-swatch-tall {
+.nl-about-img-tall {
   grid-row: span 2;
+  width: 100%;
+  height: 100%;
+  min-height: 370px;
+  object-fit: cover;
+  border-radius: 3px;
+  display: block;
+}
+
+.nl-about-img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 3px;
+  display: block;
 }
 
 /* ── Footer ────────────────────────────── */
