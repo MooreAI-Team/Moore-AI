@@ -3,14 +3,19 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 APP_DIR="$(cd -- "$SCRIPT_DIR/.." && pwd)"
+LOG_FILE="${TMPDIR:-/tmp}/moore-ai-update.log"
+
+on_error() {
+  echo "Update failed. See $LOG_FILE"
+}
+
+trap on_error ERR
 
 cd "$APP_DIR"
+: > "$LOG_FILE"
 
-echo "Updating Moore AI from git..."
-git pull --ff-only
+git pull --ff-only --quiet >> "$LOG_FILE" 2>&1
 
-echo "Building and restarting Docker Compose services..."
-docker compose up -d --build --pull always
+docker compose up -d --build --pull always --quiet-pull >> "$LOG_FILE" 2>&1
 
-echo "Current service status:"
-docker compose ps
+echo "Update complete: $(git rev-parse --short HEAD)"
