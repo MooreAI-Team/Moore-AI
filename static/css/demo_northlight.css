@@ -373,8 +373,18 @@ body {
     padding: 16px 24px;
   }
 
+  /* Stack hero to single column on tablet/mobile */
   .nl-hero {
-    padding: 80px 24px 64px;
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .nl-hero-img-side {
+    height: 340px;
+  }
+
+  .nl-hero-text-side {
+    padding: 52px 32px 56px;
   }
 
   .nl-products {
@@ -398,6 +408,10 @@ body {
     grid-template-rows: 140px 140px;
   }
 
+  .nl-about-img-tall {
+    min-height: auto;
+  }
+
   .nl-footer {
     padding: 48px 24px;
   }
@@ -410,5 +424,13 @@ body {
 
   .nl-product-grid {
     grid-template-columns: 1fr;
+  }
+
+  .nl-hero-img-side {
+    height: 260px;
+  }
+
+  .nl-hero-text-side {
+    padding: 44px 24px 48px;
   }
 }
