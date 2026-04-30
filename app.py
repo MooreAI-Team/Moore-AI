@@ -1,7 +1,7 @@
 # Moore AI - Flask Web Application
 # An AI consulting company website
 
-from flask import Flask, render_template, request, redirect, flash, send_from_directory
+from flask import Flask, render_template, request, redirect, flash, send_from_directory, url_for
 import requests
 import smtplib
 import os
@@ -19,6 +19,20 @@ app.config['SECRET_KEY'] = os.getenv(
     'SECRET_KEY', 'fallback-secret-key-change-in-production')
 
 DATA_DIR = os.getenv("DATA_DIR", ".")
+
+
+def static_asset(filename):
+    """Build a cache-busted URL for static files served through CDNs/proxies."""
+    static_path = os.path.join(app.static_folder, filename)
+    try:
+        version = int(os.path.getmtime(static_path))
+    except OSError:
+        return url_for('static', filename=filename)
+
+    return url_for('static', filename=filename, v=version)
+
+
+app.jinja_env.globals['static_asset'] = static_asset
 
 
 @app.route('/')
