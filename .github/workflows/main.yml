@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Call endpoint
         run: |
-          curl -X POST "https://n8n.judahsbase.com/webhook/130ec7b9-2ff7-4ab7-988e-65f1ac1fb825" \
+          curl -X POST "https://n8n.mooreai.net/webhook/0ce64233-18a2-4cac-b48f-0e6a518f8d9c" \
             -H "Content-Type: application/json" \
             -d '{
               "repository": "${{ github.repository }}",
