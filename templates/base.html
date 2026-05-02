@@ -14,11 +14,45 @@
   <meta name="keywords" content="custom software development, systems modernization, workflow automation, data integration, platform architecture, software consulting" />
   <meta name="author" content="Moore AI" />
   
+  <!-- Canonical -->
+  <link rel="canonical" href="https://mooreai.net{{ request.path }}" />
+
   <!-- Open Graph / Social Media -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Moore AI - Software Development & Systems Modernization" />
   <meta property="og:description" content="Moore AI builds custom software, modernizes legacy systems, and automates workflows. Three people who pay close attention to your problem and build the right solution." />
-  <meta property="og:url" content="https://mooreai.net" />
+  <meta property="og:url" content="https://mooreai.net{{ request.path }}" />
+  <meta property="og:image" content="https://mooreai.net/static/img/banner.png" />
+  <meta property="og:site_name" content="Moore AI" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://mooreai.net/#website",
+        "name": "Moore AI",
+        "url": "https://mooreai.net"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://mooreai.net/#organization",
+        "name": "Moore AI",
+        "url": "https://mooreai.net",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://mooreai.net/static/svg/12Color_LogoOnly.svg"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/zach-moore-aa0535332/",
+          "https://github.com/MooreAI-Team"
+        ]
+      }
+    ]
+  }
+  </script>
   
   <!-- Stylesheets -->
   <script src="https://cdn.tailwindcss.com"></script>
