@@ -1,7 +1,7 @@
 # Moore AI - Flask Web Application
 # An AI consulting company website
 
-from flask import Flask, render_template, request, redirect, flash, send_from_directory, url_for
+from flask import Flask, render_template, request, redirect, flash, send_from_directory, url_for, Response
 import requests
 import smtplib
 import os
@@ -145,6 +145,32 @@ def contact():
 def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static', 'img'),
                                'favicon.ico', mimetype='image/vnd.microsoft.icon')
+
+
+@app.route('/sitemap.xml')
+def sitemap():
+    pages = [
+        ('/', '1.0', 'weekly'),
+        ('/services', '0.9', 'monthly'),
+        ('/about', '0.8', 'monthly'),
+        ('/web-design', '0.8', 'monthly'),
+        ('/projects', '0.8', 'monthly'),
+        ('/team', '0.7', 'monthly'),
+        ('/faq', '0.7', 'monthly'),
+        ('/testimonials', '0.6', 'monthly'),
+    ]
+    urls = '\n'.join(
+        f'  <url>\n    <loc>https://mooreai.net{path}</loc>\n    <changefreq>{freq}</changefreq>\n    <priority>{priority}</priority>\n  </url>'
+        for path, priority, freq in pages
+    )
+    xml = f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}\n</urlset>'
+    return Response(xml, mimetype='application/xml')
+
+
+@app.route('/robots.txt')
+def robots():
+    content = 'User-agent: *\nAllow: /\nSitemap: https://mooreai.net/sitemap.xml\n'
+    return Response(content, mimetype='text/plain')
 
 
 def send_email_notification(name, sender_email, message_body):
