@@ -157,7 +157,6 @@ def sitemap():
         ('/projects', '0.8', 'monthly'),
         ('/team', '0.7', 'monthly'),
         ('/faq', '0.7', 'monthly'),
-        ('/testimonials', '0.6', 'monthly'),
     ]
     urls = '\n'.join(
         f'  <url>\n    <loc>https://mooreai.net{path}</loc>\n    <changefreq>{freq}</changefreq>\n    <priority>{priority}</priority>\n  </url>'
