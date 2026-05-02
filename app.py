@@ -60,11 +60,6 @@ def zach_bio():
     return render_template('zach.html')
 
 
-@app.route('/testimonials')
-def testimonials():
-    return render_template('testimonials.html')
-
-
 @app.route('/projects')
 def projects():
     return render_template('projects.html')
