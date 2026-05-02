@@ -77,7 +77,9 @@
     }
   </script>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
-  <link rel="icon" type="image/ico" href="{{url_for('static', filename='img/favicon.ico')}}" />
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='svg/12Color_LogoOnly.svg') }}" />
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/favicon.ico') }}" />
+  <link rel="apple-touch-icon" href="{{ url_for('static', filename='img/favicon.png') }}" />
   <!-- <script src="https://www.google.com/recaptcha/api.js"></script>
   <script>
    function onSubmit(token) {
